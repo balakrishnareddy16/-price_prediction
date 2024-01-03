@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Prediction</title>
+</head>
+<body>
+    <h1 style="color: red;text-align: center;">House Price Prediction</h1>
+    <div style="text-align: center;">
+        <form  method="post">
+            <label>Bed Rooms:</label><br>
+            <input type="range" name = "bedrooms" required><br><br>
+            <label>Bath Rooms:</label><br>
+            <input type="range" name = "bathrooms" required min="1" max="10" step="1"><br><br>
+            
+            <label for="">SqFt</label><br>
+            <input type="range"  name="SqFt" min="100" max="1000" required><br>
+            <label>Location</label><br>
+            <select name="location_mapping" >
+                {% for i in location_mapping %}
+                <option value="{{location_mapping[i]}}">{{i}}</option>
+                {% endfor %}
+            </select><br>
+            <label >Direction:</label><br>
+            <select name="direction_mapping">
+                {% for i in direction_mapping  %}
+                <option value="{{direction_mapping[i]}}">{{i}}</option>
+                {% endfor %}
+            </select><br><br>
+            <label >Property TYpe:</label><br>
+            <select name="property_type_mapping">
+                {% for i in property_type_mapping  %}
+                <option value="{{property_type_mapping[i]}}">{{i}}</option>
+                {% endfor %}
+            </select><br>
+            <label >Status:</label><br>
+            <select name="status_mapping">
+                {% for i in status_mapping  %}
+                <option value="{{status_mapping[i]}}">{{i}}</option>
+                {% endfor %}
+            </select><br><br><br><br>
+            <button>Submit</button> 
+        </form>
+    </div>
+    
+</body>
+</html>
